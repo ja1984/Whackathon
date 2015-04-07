@@ -15,7 +15,15 @@ module.exports = function(app) {
             }
         }
 
-        res.render('index', {locals: { routes: routes }});
+        var contest = {
+        	title: "Nature",
+        	description: 'Make an application that help users discovering the nature and how beautiful it really is!',
+        	useCustomImage: false,
+        	customImageUrl: '',
+        	credit: ''
+        };
+
+        res.render('index', {locals: { routes: routes, contest: contest }});
     };
 
     app.get('/', route.index);
